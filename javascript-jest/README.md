@@ -2,8 +2,8 @@
 - $ `cd <github-repo>`
 - $ `git pull origin main`
 - $ `git checkout -b <branch-name>`
-- $ `mkdir <project-name>`
-- $ `cd <project-name>`
+- $ `mkdir <folder-name>`
+- $ `cd <folder-name>`
 - $ `touch jest.test.js`
 - $ `code .`
 - $ `yarn add jest`
@@ -19,7 +19,7 @@
 
 ***then perform git flow as usual***
 - $ `git status`
-- $ `git add <file-name>`
+- $ `git add <folder-name>`
 - $ `git commit -m "message"`
 - $ `git push origin <branch-name>`
 
