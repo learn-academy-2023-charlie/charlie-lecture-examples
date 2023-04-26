@@ -23,6 +23,12 @@
 - $ `git commit -m "message"`
 - $ `git push origin <branch-name>`
 
+## Switching drivers
+- $ `git fetch origin <branch-name>`
+- $ `git checkout <branch-name>`
+***pull in the required node modules that will run the jest test suite***
+- $ `yarn`
+
 ## Test Driven Development (TDD)
 
 ***Purpose***
