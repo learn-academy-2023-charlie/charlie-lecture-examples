@@ -25,8 +25,8 @@
 
 ## Switching drivers
 - $ `git fetch origin <branch-name>`
-- $ `git checkout <branch-name>`
-***pull in the required node modules that will run the jest test suite***
+- $ `git checkout <branch-name>`  
+***pull in the required node modules that will run the jest test suite*** 
 - $ `yarn`
 
 ## Test Driven Development (TDD)
