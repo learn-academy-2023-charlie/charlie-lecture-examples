@@ -32,14 +32,19 @@
 ## $${\color{red}RED - \space \color{green}GREEN - \space \color{gold}REFACTOR}$$ 
 
   $${\color{red} Red: \space creating \space a \space test \space for \space a \space function \space that \space will \space give \space an \space expected \space output}$$
-  $${\color{red} 1. \space Write \space the \space test}$$
+
+  $${\color{red} 1. \space Write \space the \space test}$$  
+
   $${\color{red} \space \space \space \space 2. \space See \space the \space test \space fail}$$
 
-  $${\color{green} Green: \space creating \space the \space function \space that \space will \space pass \space the \space evaluation}$$
-  $${\color{green} 3. \space Write \space the \space code}$$
+  $${\color{green} Green: \space creating \space the \space function \space that \space will \space pass \space the \space evaluation}$$  
+
+  $${\color{green} 3. \space Write \space the \space code}$$  
+
   $${\color{green} \space \space \space \space 4. \space See \space the \space test \space pass}$$
 
-  $${\color{gold} Refactor: \space clean \space up \space code \space or \space use \space a \space different \space approach}$$
+  $${\color{gold} Refactor: \space clean \space up \space code \space or \space use \space a \space different \space approach}$$  
+  
   $${\color{gold} \space \space \space  \space \space \space  \space \space \space \space \space \space 5. \space Refactor \space if \space necessary}$$
 
 ## Creating a jest test
