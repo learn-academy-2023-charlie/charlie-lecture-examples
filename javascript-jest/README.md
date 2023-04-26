@@ -59,14 +59,18 @@
   $${\color{gold} \space \space \space  \space \space \space  \space \space \space \space \space \space 5. \space Refactor \space if \space necessary}$$
 
 ## UNIT TESTING - Creating a jest test
-- describe(): groups the test, takes in two arguments:
-  string of the name of the function and a callback function, which is a function that is taken in as an argument
+- describe(): groups the test, takes in two arguments:  
+  - string of the name of the function
+  - a callback function, which is a function that is taken in as an argument
 
-- it(): nested in the describe code block, defining the test, takes in two arguments:
-  string of the action statement of the function and a callback function
+- it(): nested in the describe code block, defining the test, takes in two arguments:  
+  - string of the action statement of the function 
+  - a callback function
 
-- expect(): function call with or without an argument
-jest matcher: appended to the end of the expect statement, take the expected output as an argument
+- expect(): function call with or without an argument  
+
+- jest matcher: same lines as the expect statement, appended to the end of the expect statement
+  - takes the expected output as an argument
 
 ***
 $${\color{red}RED}$$
