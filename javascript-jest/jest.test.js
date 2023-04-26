@@ -1,3 +1,5 @@
+// Prompt: Create a function that returns a statement that tells Charlie 2023 to drink tea.
+
 // Red: creating a test for a function that will give an expected output
 // 1. Write the test
 // 2. See the test fail
@@ -67,8 +69,9 @@ describe("soupChecker", () => {
 // output: string that states whether or not an item is a soup
 // function name: soupChecker
 // use conditional statements to provide outputs for yes or no (if/else)
-// return: if "no" -> "Why bother, it is not soup"
-          // if "yes" -> "That is soup"
+// return: 
+  // if "no" -> "Why bother, it is not soup"
+  // if "yes" -> "That is soup"
 
 // function:
 // const soupChecker = (string1) => {
@@ -88,6 +91,7 @@ describe("soupChecker", () => {
 
 // REFACTOR using ternary operator
 const soupChecker = (string1) => {
+  // return condition ? true (similar to if) : false (similar to else)
   return string1 === "yes" ? "That is soup" : "Why bother, it is not soup"
 }
 
@@ -97,3 +101,80 @@ const soupChecker = (string1) => {
 //   ✓ informs Charlie 2023 to drink more tea (1 ms)
 // soupChecker
 //   ✓ returns whether or not an item is soup
+
+// Prompt: Create a function that takes in an array and returns an array that replaces any names that contain the letter "a" with an emoji "🍏".
+
+// Test variable
+const cohort2023 = [ "Aubrey", "Bea", "Catalino", "Cherry", "Ernesto", "Halie", "Henri", "Jessica", "Justin", "Kyle", "Ramgel", "Rashaan", "Scott", "Suri", "Tucker", "Vance", "Will", "Yue Han" ]
+// Expected output: [ "🍏", "🍏", "🍏", "Cherry", "Ernesto", "🍏", "Henri", "🍏", "Justin", "Kyle", "🍏", "🍏", "Scott", "Suri", "Tucker", "🍏", "Will", "🍏" ]
+
+// test
+describe("appleNames", () => {
+  it("takes in an array and returns an array that replaces any names that contain the letter 'a' with an emoji '🍏'", () => {
+    expect(appleNames(cohort2023)).toEqual([ "🍏", "🍏", "🍏", "Cherry", "Ernesto", "🍏", "Henri", "🍏", "Justin", "Kyle", "🍏", "🍏", "Scott", "Suri", "Tucker", "🍏", "Will", "🍏" ])
+  })
+})
+
+// see the test fail by running $ yarn jest
+// appleNames
+// ✕ takes in an array and returns an array that replaces any names that contain the letter 'a' with an emoji '🍏'
+
+// ● appleNames › takes in an array and returns an array that replaces any names that contain the letter 'a' with an emoji '🍏'
+
+// ReferenceError: appleNames is not defined
+
+
+// create the function
+// pseudocode:
+// input: array
+// output: array with apple emoji replacing strings with the letter "a" and the same length as the original
+// function name: appleNames
+// methods: .map() and .includes()
+// iterate across the values in the array by using .map()
+// replacing the values that have letter "a" with green apple emoji by using .includes()
+// return: array with apple emoji replacing strings with the letter "a" 
+
+// function:
+// const appleNames = (array) => {
+//   // console.log(array[0].includes("a") || array[0].includes("A")) // output: true, look for the print out above the testing suite
+//   return array.map((string) => {
+//     const aFilter = string.includes("a") || string.includes("A")
+//     if(aFilter === true) {
+//       return "🍏"
+//     } else {
+//       return string
+//     }
+//   })
+// }
+
+// see the test pass
+// pass
+// appleNames
+// ✓ takes in an array and returns an array that replaces any names that contain the letter 'a' with an emoji '🍏'
+
+// clean it up
+// const appleNames = (array) => {
+//   return array.map((string) => {
+//     const aFilter = string.includes("a") || string.includes("A")
+//     if(aFilter) {
+//       return "🍏"
+//     } else {
+//       return string
+//     }
+//   })
+// }
+
+// additional refactor with ternary operator
+const appleNames = (array) => {
+  return array.map((string) => {
+    const aFilter = string.includes("a") || string.includes("A")
+    return aFilter ? "🍏" : string
+  })
+}
+// Prompt: Create a function that takes in two arrays and returns an array that combines the values from the two arrays and places them in alphabetical order.
+
+// test variable:
+const needAdventure = []
+const epicTrips = []
+
+// expected output: 

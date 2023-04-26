@@ -24,6 +24,17 @@
 - $ `git push origin <branch-name>`
 
 ## Test Driven Development (TDD)
+
+***Purpose***
+- To identify errors  
+- To give confidence in the quality of your code 
+
+***Types***
+- Unit Testing: Testing the individual components of an application
+- Integration Testing: Testing how components interact with each other
+- System Testing: Testing the whole application
+- Acceptance Testing: Testing that the user requirement's have been met
+
 ***Three things to keep track of when testing:***
 - Input: What is the value you are passing to your method or function?
 - Expected output: What is supposed to happen based on your input?
@@ -44,10 +55,10 @@
   $${\color{green} \space \space \space \space 4. \space See \space the \space test \space pass}$$
 
   $${\color{gold} Refactor: \space clean \space up \space code \space or \space use \space a \space different \space approach}$$  
-  
+
   $${\color{gold} \space \space \space  \space \space \space  \space \space \space \space \space \space 5. \space Refactor \space if \space necessary}$$
 
-## Creating a jest test
+## UNIT TESTING - Creating a jest test
 - describe(): groups the test, takes in two arguments:
   string of the name of the function and a callback function, which is a function that is taken in as an argument
 
