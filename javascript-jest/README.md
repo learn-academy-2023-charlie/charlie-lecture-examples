@@ -1,25 +1,27 @@
 ## Getting Started
-- $ cd <github-repo>
-- $ git pull origin main
-- $ git checkout -b <branch-name>
-- $ mkdir <project-name>
-- $ cd <project-name>
-- $ touch jest.test.js
-- $ code .
-- $ yarn add jest
+- $ `cd <github-repo>`
+- $ `git pull origin main`
+- $ `git checkout -b <branch-name>`
+- $ `mkdir <project-name>`
+- $ `cd <project-name>`
+- $ `touch jest.test.js`
+- $ `code .`
+- $ `yarn add jest`
 
+***
+***NOTE***
 - run yarn commands on the project directory
 - run git commands on the github repo
 
 ## Pushing changes to github
 ***cd out to the github repo***
-- $ cd ..  
+- $ `cd ..`  
 
 ***then perform git flow as usual***
-- $ git status
-- $ git add <file-name>
-- $ git commit -m "message"
-- $ git push origin <branch-name>
+- $ `git status`
+- $ `git add <file-name>`
+- $ `git commit -m "message"`
+- $ `git push origin <branch-name>`
 
 ## Test Driven Development (TDD)
 ***Three things to keep track of when testing:***
@@ -27,26 +29,18 @@
 - Expected output: What is supposed to happen based on your input?
 - Actual result from your code: What has actually occurred from your logic?
 
-## <span style="color:red">RED</span>-<span style="color:green">GREEN</span>-<span style="color:gold">REFACTOR</span> process
-<span style="color:red">
-  Red: creating a test for a function that will give an expected output
+## $${\color{red}RED - \space \color{green}GREEN - \space \color{gold}REFACTOR}$$ 
 
-  1. Write the test  
-  2. See the test fail
-</span>
+  $${\color{red} Red: \space creating \space a \space test \space for \space a \space function \space that \space will \space give \space an \space expected \space output}$$
+  $${\color{red} 1. \space Write \space the \space test}$$
+  $${\color{red} \space \space \space \space 2. \space See \space the \space test \space fail}$$
 
-<span style="color:green">
-  Green: create the function that will pass the evaluation
+  $${\color{green} Green: \space creating \space the \space function \space that \space will \space pass \space the \space evaluation}$$
+  $${\color{green} 3. \space Write \space the \space code}$$
+  $${\color{green} \space \space \space \space 4. \space See \space the \space test \space pass}$$
 
-  3. Write the code
-  4. See the test pass
-</span>
-
-<span style="color:gold">
-  Refactor: use a method that will take less lines of code or use a different approach
-  5. Refactor, if necessary
-</span>
-
+  $${\color{gold} Refactor: \space clean \space up \space code \space or \space use \space a \space different \space approach}$$
+  $${\color{gold} \space \space \space  \space \space \space  \space \space \space \space \space \space 5. \space Refactor \space if \space necessary}$$
 
 ## Creating a jest test
 - describe(): groups the test, takes in two arguments:
@@ -58,19 +52,32 @@
 - expect(): function call with or without an argument
 jest matcher: appended to the end of the expect statement, take the expected output as an argument
 
+***
+$${\color{red}RED}$$
+***
+
+1. Write the test
 ```js
-// 1. Write the test
   describe("drinkTea", () => {
     it("informs Charlie 2023 to drink more tea", () => {
       expect(drinkTea()).toEqual("Charlie 2023, drink more tea now!!!")
     })
   })
+```
 
-// 2. See the test fail by running $ yarn jest
-  // Good failure because the test is built to evaluate a function call drinkTea. Since the function does not exist yet, this test fails at the expect statement that contains the function call.
-  // output -> ReferenceError: drinkTea is not defined
+2. See the test fail by running $ yarn jest  
 
-// 3. Write the code
+![Good failure](assets/fail.png)  
+- Good failure because the test is built to evaluate a function call drinkTea.  
+- Since the function does not exist yet, this test fails at the expect statement that contains the function call.  
+- Output -> ReferenceError: drinkTea is not defined
+
+***
+$${\color{green}GREEN}$$
+***
+
+3. Write the code
+```js
   // Pseudocode:
   // input: none
   // output: string that states "Charlie 2023, drink more tea now!!!"
@@ -81,17 +88,29 @@ jest matcher: appended to the end of the expect statement, take the expected out
   const drinkTea = () => {
     return "Charlie 2023, drink more tea now!!!"
   }
-
-// 4. See the test pass by running $ yarn jest
-  // not need to console.log() the function call
-  // the function call is in the expect statement
-  // As long as the logic returns the same output as the expected output passed into the jest matcher, you will see PASS. If not, an error message will appear.
-
-// 5. Refactor, if necessary
-  // not necessary
 ```
 
+4. See the test pass by running $ yarn jest  
+
+![Pass](assets/pass.png)  
+
+  - not need to console.log() the function call
+  - the function call is in the expect statement
+  - As long as the logic returns the same output as the expected output passed into the jest matcher, you will see PASS. If not, an error message will appear.
+
+***
+$${\color{gold}REFACTOR}$$
+***
+
+5. Refactor, if necessary  
+    - not necessary for this function
+
+***
+
+
 ## Unexpected failure
+![Error](assets/unexpected-fail.png)  
+
 - If you receive an error when evaluating your function, follow the trace of the error.
 
 - This error is showing that the expected output and the actual output (received) are not the same.
