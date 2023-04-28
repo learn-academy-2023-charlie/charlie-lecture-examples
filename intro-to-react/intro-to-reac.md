@@ -81,7 +81,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <!-- load the appropriate scripts and methods that will allow the react application to work on this html file only discuss if there are questions, I can post more in depth descriptions on slack -->
+    <!-- load the appropriate scripts and methods that will allow the react application to work on this html file  -->
     <!-- you can load two React scripts from an external website called unpkg.com: react is the core React library.
 react-dom provides DOM-specific methods that enable you to use React with the DOM. -->
     <script
@@ -93,10 +93,10 @@ react-dom provides DOM-specific methods that enable you to use React with the DO
       crossorigin
     ></script>
 
-<!-- after talking about jsx, Note that browsers don’t understand JSX out of the box, so you’ll need a JavaScript compiler, such as a Babel, to transform your JSX code into regular JavaScript.
+<!-- browsers don’t understand JSX out of the box, so you’ll need a JavaScript compiler, such as a Babel, to transform your JSX code into regular JavaScript.
 
 Adding Babel to your project
-To add Babel to your project, copy and paste the following script in your index.html file: -->
+-->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>Intro to React</title>
   </head>
@@ -109,12 +109,12 @@ To add Babel to your project, copy and paste the following script in your index.
       const App = () => {
         return <></>
       }
-// after the babel talk, The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors. 
+<!-- The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.  -->
 
       const domContainer = document.querySelector("#react-container")
-// createRoot lets you create a root to display React components inside a browser DOM node.
+<!-- createRoot lets you create a root to display React components inside a browser DOM node. -->
       const root = ReactDOM.createRoot(domContainer)
-      // React will create a root for the domNode, and take over managing the DOM inside it. After you’ve created a root, you need to call root.render to display a React component inside of it:
+<!-- React will create a root for the domNode, and take over managing the DOM inside it. After you’ve created a root, you need to call root.render to display a React component inside of it: -->
       root.render(<App />)
     </script>
   </body>
