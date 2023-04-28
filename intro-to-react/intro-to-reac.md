@@ -109,12 +109,12 @@ Adding Babel to your project
       const App = () => {
         return <></>
       }
-<!-- The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.  -->
+// The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.
 
       const domContainer = document.querySelector("#react-container")
-<!-- createRoot lets you create a root to display React components inside a browser DOM node. -->
+// createRoot lets you create a root to display React components inside a browser DOM node. 
       const root = ReactDOM.createRoot(domContainer)
-<!-- React will create a root for the domNode, and take over managing the DOM inside it. After you’ve created a root, you need to call root.render to display a React component inside of it: -->
+// React will create a root for the domNode, and take over managing the DOM inside it. After you’ve created a root, you need to call root.render to display a React component inside of it: -->
       root.render(<App />)
     </script>
   </body>
