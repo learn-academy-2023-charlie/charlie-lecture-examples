@@ -45,7 +45,7 @@
 ```
 
 ## Additional React Components
-- Components allow to be in charge of different data.
+- Components can have a separation of concerns.
 - Since `App` is your top-level component, you perform component calls inside `App` to allow the JSX elements from additional components to display on the user interface.
 ```js
   const App = () => {
