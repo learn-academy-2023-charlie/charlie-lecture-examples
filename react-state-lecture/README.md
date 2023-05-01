@@ -1,4 +1,4 @@
-React State Lecture
+# React State Lecture
 
 - App.js is heavy hitter (parent component) and will display our content and other components to our browser
 - React fragments allow us to return one container with as many things inside as we want
@@ -8,7 +8,7 @@ React State Lecture
 - inline styling is an option vs css file
 - style is an attribute that can be passed to a tag to add more information
 
-Pseudo: I want to create a running app that tracks how many miles I have ran. Stretch: How many per month?
+## Pseudo: I want to create a running app that tracks how many miles I have ran. Stretch: How many per month?
 
 - keep track of how many current miles and adding a new mile ✅
-- keeps track of miles per that month
+- keeps track of miles per that month ✅
