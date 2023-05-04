@@ -153,7 +153,7 @@ Step 2: Display props inside the child component
 ***
 ***RECAP***  
 ***
-React helps us create engaging user interfaces. React state, props, and functional props allow us as developers to interact with the data that will eventually be displayed to the user. React is very focused on the user interactions.  
+React helps us create engaging user interfaces. React state and props allow us as developers to interact with the data that will eventually be displayed to the user. React is very focused on the user interactions.  
 1. To allow values to change based on a user interaction, we will introduce `react state`. The react hook useState() gives us the ability to allow displayed values to change through the state variable and setter function. The initial value comes from the argument we give to useState().
 2. When creating a component, we want to be mindful of its purpose and how we are organizing the data that is required for the whole application. There are several ways to tackle that challenge. However, today the approach we used was to maintain all our variables, custom functions, state variables in App.js, which makes it a `logic component`. The additional components were used to tell the user interface how to display that data. Since they do not have state, the child components are `display components`.
 3. To share relevant data from the App.js (parent component) to additional components (child components), we use `props`. Props travel in one direction, commonly mentioned as `passing data down the river`. We passed the props on the component call of the component that needs the data.
