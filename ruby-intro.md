@@ -132,4 +132,45 @@ ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [arm64-darwin21]
  => 0
 3.0.0 :052 > 90.to_s
  => "90"
+3.0.0 :053 > my_array = [4, 5, 6, 7]
+ => [4, 5, 6, 7]
+3.0.0 :054 > my_array.length
+ => 4
+3.0.0 :055 > my_array[0]
+ => 4
+3.0.0 :056 > my_array[3]
+ => 7
+3.0.0 :057 > my_array[-1]
+ => 7
+3.0.0 :058 > my_array[-2]
+ => 6
+3.0.0 :059 > my_array.first
+ => 4
+3.0.0 :060 > my_array.last
+ => 7
+3.0.0 :061 > my_array.reverse
+ => [7, 6, 5, 4]
+3.0.0 :062 > my_arrat
+(irb):62:in `<main>': undefined local variable or method `my_arrat' for main:Object (NameError)
+Did you mean?  my_array
+	from /Users/sarahproctor/.rvm/gems/ruby-3.0.0/gems/irb-1.6.4/exe/irb:9:in `<top (required)>'
+	from /Users/sarahproctor/.rvm/gems/ruby-3.0.0/bin/irb:23:in `load'
+	from /Users/sarahproctor/.rvm/gems/ruby-3.0.0/bin/irb:23:in `<main>'
+3.0.0 :063 > my_array
+ => [4, 5, 6, 7]
+3.0.0 :064 > my_array.reverse.first
+ => 7
+3.0.0 :065 > my_array.first.reverse
+(irb):65:in `<main>': undefined method `reverse' for 4:Integer (NoMethodError)
+	from /Users/sarahproctor/.rvm/gems/ruby-3.0.0/gems/irb-1.6.4/exe/irb:9:in `<top (required)>'
+	from /Users/sarahproctor/.rvm/gems/ruby-3.0.0/bin/irb:23:in `load'
+	from /Users/sarahproctor/.rvm/gems/ruby-3.0.0/bin/irb:23:in `<main>'
+3.0.0 :066 > my_array[3] = 'hello'
+ => "hello"
+3.0.0 :067 > my_array
+ => [4, 5, 6, "hello"]
+3.0.0 :068 > my_array << 7
+ => [4, 5, 6, "hello", 7]
+3.0.0 :069 > my_array
+ => [4, 5, 6, "hello", 7]
 ```
