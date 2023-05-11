@@ -129,7 +129,6 @@ jump_start = ['Gene', 'Will']
 # "Gene taught me js, html, and css."
 # "Will taught me js, html, and css."
 
-# p jump_start
 # store in a variable to see the array from the map
 # js_instructor = jump_start.map do |value|
 #   p "#{value} taught me js, html, and css."
@@ -149,4 +148,4 @@ end
 
 p jump_start
 # output ->
-["Gene taught me js, html, and css.", "Will taught me js, html, and css."]
+# ["Gene taught me js, html, and css.", "Will taught me js, html, and css."]
