@@ -1,10 +1,10 @@
 ## POSTGRESQL 5/17/23 Charlie
 
 ### terminal commands
-`$ psql` - for the sql console
-`$ \l` - lists all the databases on local machine
-`$ q` - to exit the database lists
-`$ exit` - to exit the console
+- `$ psql` - for the sql console
+- `$ \l` - lists all the databases on local machine
+- `$ q` - to exit the database lists
+- `$ exit` - to exit the console
 
 - PGAdmin (Elephant icon)
 - countries db
