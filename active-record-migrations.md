@@ -16,14 +16,15 @@
 - keep track of changes in the structure of your database by providing version control, reproducibility, and data integrity
 
 ## Process
-- Create a model to setup the structure of the database
+- Generate a model to setup the structure of the database
 - Migrate to update db schema
 - Add data entries in the rails console
 - Generate a migration to add columns to database
+- Migrate to update db schema
 
-## Create a model
+## Generate a model
 - $ `rails g model Performer name:string routine:string`  
-Save the changes to the database
+Save the changes to the database schema
 - $ `rails db:migrate`  
 Now a schema is created, which is a file that maintains the database structure.
 
@@ -40,9 +41,9 @@ Now a schema is created, which is a file that maintains the database structure.
     > vance = Performer.find 2  
     > vance.update(routine:'rollerskate')
 
-## Add columns to the database
+## Add new columns to the database
 - exit out of rails console
-- Two options to create migration files
+- Two options to generate migration files
   1. generator migration command in PascalCase
       - $ `rails g migration AddColumnTitleToPerformer`  
   2. generator migration command in snake_case
