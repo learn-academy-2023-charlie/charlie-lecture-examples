@@ -28,8 +28,3 @@ class Student < ApplicationRecord
   belongs_to :cohort
 end
 ```
-```sql
-SELECT column, column1, ...
-FROM table_name
-WHERE condition;
-```
