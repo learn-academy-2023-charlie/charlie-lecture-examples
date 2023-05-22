@@ -34,7 +34,7 @@
 - run test suite with file path that is storing the test
 - $ `rspec spec/models/service_plan_spec.rb`
 
-## Create a test
+## 1. Create a test
 - spec/models/service_plan_spec.rb
 ```rb
   # helper gem that loads on the dependencies that the rspec test needs
@@ -66,11 +66,12 @@
 
 ```
 
-## See the test fail
+## 2. See the test fail
 - $ `rspec spec/models/service_plan_spec.rb`
-***
 - Good failure when failure is on the error message for the attribute missing
 ```bash
+  # Output in the terminal for rspec testing suite
+
   # model passed to describe method
   ServicePlan
 
@@ -96,7 +97,7 @@
   rspec ./spec/models/service_plan_spec.rb:4 # ServicePlan is not valid without a plan
 ```
 
-## Make the test pass with validations
+## 3. Create validations
 - app/models/service_plan.rb
 - Validations: ensure that data cannot be created without the required attributes
 - use validation helpers with this process
@@ -108,38 +109,75 @@
   end
 ```
 
-## Testing associations
-### Create a model with a foreign key attribute
+## Rspec testing with associations
+### 1. Create a model with a foreign key attribute
 - $ `rails g model Customer name:string account:integer paid:boolean service_plan_id:integer`
-### Setup the relationship on the applicable classes for each model
+### 2. Setup the relationship on the applicable classes for each model
 - app/models
 ```rb
   class ServicePlan < ApplicationRecord
     has_many :customers
   end
 
+  # class for model with foreign key
   class Customer < ApplicationRecord
     belongs_to :service_plan
   end
 ```
 - $ `rails db:migrate`
+### 3. Create test
+```rb
+  require 'rails_helper'
 
-## Error messages in the rspec test suite
-```bash
-Customer
-  is not valid without a name attribute (FAILED - 1)
+  RSpec.describe Customer, type: :model do
+    it 'is not valid without a name attribute' do
+      # create an entry for the table whose model establishes the has_many relationship
+      basic = ServicePlan.create(plan: 'Basic', price: 175)
+      # create an entry for the table whose model establishes the belongs_to relationship, this model has the foreign key
+      aubrey = basic.customers.create(account: 183312345, paid: true)
+      expect(aubrey.errors[:name]).to_not be_empty
+    end
 
-Failures:
-
-  1) Customer is not valid without a name attribute
-     Failure/Error: aubrey = basic.customers.create(account: 183312345, paid: true)
-     
-     NameError:
-       Rails couldn't find a valid model for Plan association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.
-     # ./spec/models/customer_spec.rb:6:in `block (2 levels) in <top (required)>'
-     # ------------------
-     # --- Caused by: ---
-     # NameError:
-     #   uninitialized constant Customer::Plan
-     #   ./spec/models/customer_spec.rb:6:in `block (2 levels) in <top (required)>'
+  end
 ```
+### 4. See the test fail
+- $ `rspec spec/models/customer_spec.rb`
+***
+***Good failure***
+### Error messages in the rspec test suite
+```bash
+  Failures:
+
+    1) Customer is not valid without a name attribute
+      Failure/Error: expect(aubrey.errors[:name]).to_not be_empty
+        expected `[].empty?` to be falsey, got true
+      # ./spec/models/customer_spec.rb:11:in `block (2 levels) in <top (required)>'
+```
+***
+***Bad failure***  
+### Error messages in the rspec test suite
+```bash
+  Failures:
+
+    1) Customer is not valid without a name attribute
+      Failure/Error: aubrey = basic.customers.create(account: 183312345, paid: true)
+      
+      NameError:
+        Rails couldn't find a valid model for Plan association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.
+      # ./spec/models/customer_spec.rb:6:in `block (2 levels) in <top (required)>'
+      # ------------------
+      # --- Caused by: ---
+      # NameError:
+      #   uninitialized constant Customer::Plan
+      #   ./spec/models/customer_spec.rb:6:in `block (2 levels) in <top (required)>'
+```
+### 5. Create validations
+```rb
+  # modify class of the model with belongs_to relationship
+  class Customer < ApplicationRecord
+    belongs_to :service_plan
+    validates :name, presence: true
+  end
+```
+### 6. See the test pass
+- $ `rspec spec/models/customer_spec.rb`
