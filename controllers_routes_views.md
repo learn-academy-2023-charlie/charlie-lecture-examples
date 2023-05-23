@@ -1,9 +1,11 @@
 # Controllers, Routes, and Views
-  **Controller**: coordinates the interaction between the user, the model, and views (directs our app)
+  Controller: coordinates the interaction between the user, the model, and views (directs our app)
   <br/>
-  **Route**: how the user gets somewhere in our application
-  **View**: what the user sees
-  **URL**: Uniform Resource Locator
+  Route: how the user gets somewhere in our application
+  <br/>
+  View: what the user sees
+  <br/>
+  URL: Uniform Resource Locator
  --------------------------------
 ```bash
   $ rails generate controller Home
