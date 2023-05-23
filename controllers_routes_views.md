@@ -74,12 +74,12 @@ My landing page will be a view that will have links to my other views
 ```ruby
 /views/home/landing.html.erb
   <h1>Welcome to this App!</h1>
-  <%= link_to "Greeter", "/greeter" %>
+  <%= link_to 'Greeter', '/greeter' %>
   <br/> 
-  <%= link_to "Joke", "/joke" %>
+  <%= link_to 'Joke', '/joke' %>
   <br/>
-  <%= link_to "current Cohort", "/current" %>
+  <%= link_to 'Current Cohort', '/current' %>
 ```
 
 - link_to method will take a title/text (words displayed for user to click on), and then the path
-> link_to 'title', '/path'
+> ` <%= link_to 'title', '/path' %> `
