@@ -1,7 +1,7 @@
-## Active Record Associations
-# Concepts:
+# Active Record Associations
+### Concepts:
 - Primary Key
-  > id
+  ~ id
   > Unique identifier
   > Rails handles creating each id upon creation
   > has_many
