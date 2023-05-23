@@ -41,8 +41,45 @@ Made a route that will trigger the method
   get '/greeter' => 'home#greeter'
 ```
 ### Views
-Created a file inside of our app/views/home folder with '.html.erb' extension
+After creating a method named charlie_cohort
+```ruby
+  def charlie_cohort 
+    @charlie = 'Charlie is a pretty awesome cohort in 2023'
+    @students = ['CRod', 'Aubrey', 'Ernesto', 'Kyle', 'Will', 'Ramgel']
+  end
+```
+
+Create a file inside of our app/views/home folder with `.html.erb` extension
 > `charlie_cohort.html.erb`
+- ERB : Embedded Ruby
 
+```ruby
+  <h1> Hello </h1>
+  <h2> <%= @charlie %> </h2>
+  <ul>
+    <% @students.each do |value| %> 
+      <li> <%= value %> </li>
+    <% end %>
+  </ul>
+```
 
- - ERB : Embedded Ruby
+Create a route that will trigger our method
+```ruby
+  config/routes.rb
+  # HTTP verb, url (location),  hashrocket,  controller, methods 
+  get '/charlie' => 'home#charlie_cohort'
+```
+
+My landing page will be a view that will have links to my other views
+```ruby
+/views/home/landing.html.erb
+  <h1>Welcome to this App!</h1>
+  <%= link_to "Greeter", "/greeter" %>
+  <br/> 
+  <%= link_to "Joke", "/joke" %>
+  <br/>
+  <%= link_to "current Cohort", "/current" %>
+```
+
+- link_to method will take a title/text (words displayed for user to click on), and then the path
+> link_to 'title', '/path'
