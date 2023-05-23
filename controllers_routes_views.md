@@ -83,3 +83,5 @@ My landing page will be a view that will have links to my other views
 
 - link_to method will take a title/text (words displayed for user to click on), and then the path
 > ` <%= link_to 'title', '/path' %> `
+
+Go Charlie!
